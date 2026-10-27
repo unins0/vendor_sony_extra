@@ -6,29 +6,20 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/sony/extra/audio
 
 PRODUCT_COPY_FILES += \
-    vendor/sony/extra/audio/proprietary/system_ext/etc/permissions/com.dolby.daxservice.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.dolby.daxservice.xml \
     vendor/sony/extra/audio/proprietary/vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.dolby.hardware.dms@2.0-service.rc \
     vendor/sony/extra/audio/proprietary/vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.dolby.media.c2@1.0-service.rc \
     vendor/sony/extra/audio/proprietary/vendor/etc/media_codecs_dolby_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_dolby_audio.xml
 
+# DD+/AC-4 decoder only: dms HAL + dolby C2 store/decoders + volume listener (dvl)
 PRODUCT_PACKAGES += \
-    libdapparamstorage \
-    libdlbpreg \
     libdlbvol \
-    libswdap \
-    libswgamedap \
-    libswvqe \
     vendor.dolby.hardware.dms@2.0 \
     libcodec2_soft_ac4dec \
     libcodec2_soft_ddpdec \
     libcodec2_soft_dolby \
     libcodec2_store_dolby \
     libdeccfg \
-    libdlbdsservice \
-    liboem_specific \
     vendor.dolby.hardware.dms@2.0-impl \
     vendor.dolby.hardware.dms@2.0_system \
-    DolbySound \
-    daxService \
     vendor.dolby.hardware.dms@2.0-service \
     vendor.dolby.media.c2@1.0-service
